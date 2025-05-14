@@ -13,7 +13,7 @@ from collections import defaultdict
 # Load environment variables
 load_dotenv()
 DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
-OLLAMA_API_URL = "https://ollama.kempysnetwork.org/api/generate"
+OLLAMA_API_URL = "http://localhost:11434/api/generate"
 MODEL_NAME = os.getenv('OLLAMA_MODEL', 'llama2')  # Default to llama2 if not specified
 LOGS_CHANNEL_ID = int(os.getenv('LOGS_CHANNEL_ID', '1213020063863672862'))  # Channel ID for logging admin actions
 
@@ -35,7 +35,7 @@ BOT_PERSONALITY_TRAITS = {
 
 BOT_GUIDELINES = {
     "do": [
-        "Helpful chill relaxed",
+        "Helpful chill relaxed"
     ],
     "dont": [
         "Never share personal info about users",
@@ -278,11 +278,7 @@ Personality traits:
 
 Response Guidelines:
 - Respond directly and naturally without any thinking out loud
-- Keep responses short and concise (1-3 sentences max)
-- Use gaming references and emojis naturally (1-2 emojis max)
-- Stay true to your laid-back personality
 - Avoid being overly formal or robotic
-- When appropriate, use gaming metaphors
 - Never use <think> tags or show your thought process
 
 As a co-owner, try to be helpful but not overbearing. Keep responses short and fun.
@@ -291,7 +287,7 @@ Current conversation context: """
     user_context = ""
     if isinstance(message.channel, discord.TextChannel):  # Check if it's a guild channel
         if message.author.guild_permissions.administrator:
-            user_context = "Speaking to a fellow server admin and gaming enthusiast, "
+            user_context = "Speaking to a fellow server admin and member, "
     
     # Construct the prompt with context
     messages_text = "\n".join([f"{msg['role']}: {msg['content']}" for msg in channel_history])
