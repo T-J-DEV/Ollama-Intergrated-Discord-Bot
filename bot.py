@@ -13,7 +13,7 @@ from collections import defaultdict
 # Load environment variables
 load_dotenv()
 DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
-OLLAMA_API_URL = "https:/ollama.kempysnetwork.org/api/generate"
+OLLAMA_API_URL = "http://localhost:11434/api/generate"
 MODEL_NAME = os.getenv('OLLAMA_MODEL', 'llama2')  # Default to llama2 if not specified
 LOGS_CHANNEL_ID = int(os.getenv('LOGS_CHANNEL_ID', '1213020063863672862'))  # Channel ID for logging admin actions
 
