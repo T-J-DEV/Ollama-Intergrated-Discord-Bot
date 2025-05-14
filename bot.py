@@ -13,9 +13,9 @@ from collections import defaultdict
 # Load environment variables
 load_dotenv()
 DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
-OLLAMA_API_URL = "http://localhost:11434/api/generate"
-MODEL_NAME = os.getenv('OLLAMA_MODEL', 'llama2')  # Default to llama2 if not specified
-LOGS_CHANNEL_ID = int(os.getenv('LOGS_CHANNEL_ID', '1213020063863672862'))  # Channel ID for logging admin actions
+OLLAMA_API_URL = os.getenv('OLLAMA_API_URL')
+MODEL_NAME = os.getenv('OLLAMA_MODEL', 'deepseek-r1:latest')  # Default to llama2 if not specified
+LOGS_CHANNEL_ID = int(os.getenv('LOGS_CHANNEL_ID'))  # Channel ID for logging admin actions
 
 # Bot Personality Configuration
 BOT_NAME = "KempAI"  # The bot's preferred name
